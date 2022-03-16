@@ -61,10 +61,10 @@ public class App {
 
         //Filter equals cantity
         Optional<Factura> facturaFilterDescription = lista.stream().filter(item -> {
-            return item.getDescription() == "imac";
+            return item.getDescription() == "Imac";
         }).findAny();  //findAny returns optional, so we neet the .get() method
         System.out.println("\nFILTRO DE FACTURAS DESCRIPCION");
-        System.out.println(facturaFilterDescription);
+        System.out.println(facturaFilterDescription.isEmpty()?"No se encuantra":facturaFilterDescription);
 
         //Filter by price greater than
         List<Factura> facturasFilterPrice = lista.stream().filter(item -> {
